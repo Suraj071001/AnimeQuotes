@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+        <variable
+            name="quoteListItem"
+            type="com.example.android.animequotes.data.retrofit.QuoteListItem" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:padding="5dp"
+        android:background="@color/quote_background">
+
+        <TextView
+            android:id="@+id/tvAnimeName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="5dp"
+            android:background="@color/main_upper"
+            android:text="@{quoteListItem.anime}"
+            android:textSize="20sp"
+            app:fontFamily="@font/bellota_bold"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="Naruto " />
+
+        <TextView
+            android:id="@+id/tvQuote"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="20dp"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="20dp"
+            android:background="@drawable/background"
+            android:text="@{quoteListItem.quote}"
+            android:textSize="20sp"
+            app:fontFamily="@font/bellota_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@+id/tvAnimeName"
+            app:layout_constraintTop_toBottomOf="@+id/tvAnimeName"
+            tools:text="Nothing goes according to plan in this cursed world,the longer you live more you relialise in this only exist pain,fuilty" />
+
+        <TextView
+            android:id="@+id/tvCharacterName"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:layout_marginEnd="5dp"
+            android:background="@color/main_lower"
+            android:text="@{quoteListItem.character}"
+            android:textSize="20sp"
+            app:fontFamily="@font/bellota_bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvQuote"
+            tools:text="-madara" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
